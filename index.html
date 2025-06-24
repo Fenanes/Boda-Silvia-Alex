@@ -88,11 +88,18 @@
 
   <script>
     const foto1 = document.querySelector('.foto1');
-    window.addEventListener('scroll', () => {
-      const offset = window.scrollY;
-      foto1.style.transform = `translateX(${offset * 0.2}px)`;
-    });
 
+    function handleParallax() {
+      if (window.innerWidth >= 768) {
+        const offset = window.scrollY;
+        foto1.style.transform = `translateX(${offset * 0.2}px)`;
+      } else {
+        foto1.style.transform = 'none';
+      }
+    }
+
+window.addEventListener('scroll', handleParallax);
+window.addEventListener('resize', handleParallax);
     const toggle = document.getElementById('menuToggle');
     const menu = document.getElementById('menu');
 

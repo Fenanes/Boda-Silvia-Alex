@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  color: #111;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+nav {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  z-index: 999;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #111;
+  transition: opacity 0.3s ease;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 3rem;
+  min-width: 180px;
+}
+
+.menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.menu li {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.menu li:last-child {
+  margin-bottom: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1rem;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+header {
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+.subtitulo {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 1rem 0;
+}
+
+.titulo-nombres {
+  font-family: 'DM Serif Display', serif;
+}
+
+.fecha-lugar {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.foto1-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 16 / 9;
+}
+
+.foto1 {
+  width: 100%;
+  height: auto;
+  transition: transform 0.1s ease-out;
+  object-fit: contain;
+  display: block;
+}
+
+.mensaje {
+  background-color: #f0eeee;
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 1.5rem;
+}
+
+.evento {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #f9f9f9;
+  padding: 4rem 2rem;
+  text-align: center;
+  gap: 2rem;
+}
+
+.col {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.evento-img {
+  width: auto;
+  height: 300px;
+  object-fit: cover;
+  margin: 1rem 0;
+}
+
+.evento-img.grande {
+  height: 400px;
+}
+
+iframe {
+  width: 100%;
+  height: 180px;
+  border: none;
+  margin-top: 1rem;
+}
+
+.transporte {
+  text-align: center;
+  padding: 2rem 4rem;
+  font-size: 1rem;
+}
+
+.lista {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 600px;
+}
+
+.lista-texto {
+  flex: 1 1 50%;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lista-texto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.lista-texto p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.lista-texto a {
+  color: #111;
+  text-decoration: underline;
+}
+
+.lista-imagen-parallax {
+  flex: 1 1 50%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.lista-imagen-parallax.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.foto4 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.timeline {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.timeline h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-img {
+  max-width: 400px;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.rsvp {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.rsvp-button {
+  display: inline-block;
+  background-color: #884c3f;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border: none;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 4px;
+}
+
+footer {
+  background-color: #f0eeee;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .lista {
+    flex-direction: column;
+  }
+
+  .lista-imagen-parallax,
+  .lista-texto {
+    flex: 1 1 100%;
+  }
+
+  .evento {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .evento-img.grande {
+    height: 250px;
+  }
+
+  .timeline-img {
+    max-width: 90%;
+  }
+}

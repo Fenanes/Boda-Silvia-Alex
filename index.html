@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boda Silvia & Alex</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <ul class="menu" id="menu">
+      <li><a href="#ceremonia">Cómo llegar</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#lista">Regalos</a></li>
+      <li><a href="#alojamientos">Alojamiento</a></li>
+      <li><a href="#rsvp">Confirma tu asistencia</a></li>
+    </ul>
+  </nav>
+
+  <header id="inicio">
+    <p class="subtitulo">¡Nos casamos!</p>
+    <h1><span class="titulo-nombres">SILVIA & ALEX</span></h1>
+    <p class="fecha-lugar">Sábado 1 de noviembre de 2025<br>Valencia</p>
+    <div class="foto1-container">
+      <img src="foto1.jpg" alt="Foto de los novios" class="foto1" />
+    </div>
+  </header>
+
+  <section class="mensaje">
+    <p>¡Nos hace mucha ilusión<br>celebrar este día contigo!</p>
+  </section>
+
+  <section class="evento" id="ceremonia">
+    <div class="col">
+      <h3>Lugar de recogida</h3>
+      <img src="valencia.png" alt="Lugar de recogida" class="evento-img grande">
+      <p>Valencia<br>Plaza de Cánovas del Castillo, L'Eixample, 46005 Valencia</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9975.3!2d-0.36545791750547746!3d39.468597701654296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1719151234567!5m2!1ses!2ses" loading="lazy"></iframe>
+    </div>
+    <div class="col" id="celebracion">
+      <h3>Celebración</h3>
+      <img src="masía.png" alt="Finca celebración" class="evento-img grande">
+      <p>Masía Campo Aníbal<br>Camí Llíria, s/n, 46540 El Puig de Santa Maria, Valencia</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4986.180293705877!2d-0.3354006603736132!3d39.61359209908266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1719150000000!5m2!1ses!2ses" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <section class="timeline" id="timeline">
+    <h2>Timeline</h2>
+    <img src="planning.png" alt="Horario celebración" class="timeline-img">
+  </section>
+
+  <section class="lista" id="lista">
+    <div class="lista-texto">
+      <h2>Regalos</h2>
+      <p>Vuestra presencia es lo más importante para nosotros, pero si además queréis tener un detalle, os lo agradecemos mucho.</p>
+      <p>Hemos creado este número de cuenta por si preferís contribuir así a nuestra nueva etapa!</p>
+      <p><strong>ES16 0081 2715 4300 0862 1871</strong></p>
+    </div>
+    <div class="lista-imagen-parallax fade-in" id="foto4Container">
+      <img src="foto4.jpg" alt="Foto pareja" class="foto4">
+    </div>
+  </section>
+
+  <section class="lista" id="alojamientos">
+    <div class="lista-imagen-parallax fade-in">
+      <img src="foto3.jpg" alt="Hotel alojamiento" class="foto4">
+    </div>
+    <div class="lista-texto">
+      <h2>Alojamiento</h2>
+      <p>Poniendo nuestro código <strong>BODAAYS!</strong> y reservando directamente a través de su web, tendréis un <strong>15 %</strong> de descuento en el <a href="https://www.eurostarshotels.com/exe-rey-don-jaime.html?referer_code=lb0gg00yx&utm_source=google&utm_medium=business&utm_campaign=lb0gg00yx" target="_blank"><strong>hotel Eurostars Rey Don Jaime</strong></a>.</p>
+    </div>
+  </section>
+
+  <section class="rsvp" id="rsvp">
+    <h2>Confirma tu asistencia</h2>
+    <a class="rsvp-button" href="https://docs.google.com/forms/d/e/1FAIpQLSc5f7VxkW-fjXPTOnvxbJwHYAsEtjQkyYrQSeLJ4tf811bMGg/viewform?usp=dialog" target="_blank">Confirmar aquí</a>
+  </section>
+
+  <footer>
+    <p class="titulo-nombres">© 2025 Silvia & Alex</p>
+    <p>Web cortesía de Pablo Fernández (pablofernbe@gmail.com)</p>
+  </footer>
+
+  <script>
+    const foto1 = document.querySelector('.foto1');
+    window.addEventListener('scroll', () => {
+      const offset = window.scrollY;
+      foto1.style.transform = `translateX(${offset * 0.2}px)`;
+    });
+
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      toggle.textContent = menu.classList.contains('open') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        menu.classList.remove('open');
+        toggle.textContent = '☰';
+      });
+    });
+
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+        else entry.target.classList.remove('visible');
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

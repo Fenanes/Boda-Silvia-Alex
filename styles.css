@@ -252,6 +252,18 @@ footer {
   padding: 2rem 1rem;
   font-size: 0.9rem;
 }
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: opacity, transform;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 @media (max-width: 768px) {
   .lista {

@@ -34,24 +34,24 @@
     <p>¡Nos hace mucha ilusión<br>celebrar este día contigo!</p>
   </section>
 
+  <section class="timeline" id="timeline">
+    <h2>Timeline</h2>
+    <img src="planning.png" alt="Horario celebración" class="timeline-img fade-in">
+  </section>
+
   <section class="evento" id="ceremonia">
     <div class="col">
       <h3>Lugar de recogida</h3>
-      <img src="valencia.png" alt="Lugar de recogida" class="evento-img grande">
+      <img src="valencia.png" alt="Lugar de recogida" class="evento-img grande fade-in">
       <p>Valencia<br>Plaza de Cánovas del Castillo, L'Eixample, 46005 Valencia</p>
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9975.3!2d-0.36545791750547746!3d39.468597701654296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1719151234567!5m2!1ses!2ses" loading="lazy"></iframe>
     </div>
     <div class="col" id="celebracion">
       <h3>Celebración</h3>
-      <img src="masía.png" alt="Finca celebración" class="evento-img grande">
+      <img src="masía.png" alt="Finca celebración" class="evento-img grande fade-in">
       <p>Masía Campo Aníbal<br>Camí Llíria, s/n, 46540 El Puig de Santa Maria, Valencia</p>
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4986.180293705877!2d-0.3354006603736132!3d39.61359209908266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1719150000000!5m2!1ses!2ses" loading="lazy"></iframe>
     </div>
-  </section>
-
-  <section class="timeline" id="timeline">
-    <h2>Timeline</h2>
-    <img src="planning.png" alt="Horario celebración" class="timeline-img">
   </section>
 
   <section class="lista" id="lista">
@@ -100,6 +100,7 @@
 
     window.addEventListener('scroll', handleParallax);
     window.addEventListener('resize', handleParallax);
+
     const toggle = document.getElementById('menuToggle');
     const menu = document.getElementById('menu');
 

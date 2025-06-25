@@ -280,4 +280,9 @@ footer {
   .timeline-img {
     max-width: 90%;
   }
+  
+  #alojamientos {
+    flex-direction: column-reverse;
+  }
 }
+
